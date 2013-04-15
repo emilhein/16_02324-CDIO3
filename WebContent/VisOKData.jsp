@@ -9,7 +9,7 @@
 			response.sendRedirect("InputForm.jsp");
 		}
 	%>
-	Den indtastede værdi er godkendt: Du indtastede
+	De indtastede værdi er godkendt: Du indtastede
 	<%=request.getParameter("alder_resultat")%>
 	år
 	<form method="GET" action="InputForm.jsp">
