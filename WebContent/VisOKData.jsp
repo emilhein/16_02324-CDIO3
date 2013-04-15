@@ -6,7 +6,7 @@
 <body>
 <%
 if (request.getMethod().equals("POST")) { // brugeren har tastet på submit
-response.sendRedirect("InputForm.jsp");
+	response.sendRedirect("InputForm.jsp");
 }
 %>
 Den indtastede værdi er godkendt: Du indtastede
