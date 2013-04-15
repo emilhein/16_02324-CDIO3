@@ -8,7 +8,20 @@ pageEncoding="ISO-8859-1"%>
 <title>Fejl formular</title>
 <body>
 Fejl under indtastning :
-<%= request.getParameter("error_resultat") %>
+<% 
+String error = request.getParameter("error_resultat");
+String[] parts = error.split(";");
+String part1 = parts[0];
+String part2 = parts[1];
+String part3 = parts[2];
+String part4 = parts[3];
+String part5 = parts[4];
+String part6 = parts[5];
+
+for(int i=0; i<parts.length;i++)
+parts[i].toString();	
+
+%>
 <form method="GET" action="InputForm.jsp">
 <input type="submit" value="OK">
 </form>
