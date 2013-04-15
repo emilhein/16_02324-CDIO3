@@ -9,6 +9,7 @@ pageEncoding="ISO-8859-1"%>
 <body>
 Fejl under indtastning :
 <% 
+try{
 String error = request.getParameter("error_resultat");
 String[] parts = error.split(";");
 String part1 = parts[0];
@@ -20,6 +21,7 @@ String part6 = parts[5];
 
 for(int i=0; i<parts.length;i++)
 parts[i].toString();	
+} catch (Exception e){}
 
 %>
 <form method="GET" action="InputForm.jsp">
