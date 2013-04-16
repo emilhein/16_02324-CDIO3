@@ -12,6 +12,20 @@
 			error = "Input i " + name + " skal mindst være " + min + " og højest være " + max + ".;";
 		return error;
 	}
+	
+	String validateNumber2(String input, long min, long max, String name)
+	{
+		String error = "";
+		long number = 0;
+		try {
+			number = Long.parseLong(input);
+		} catch (Exception e) {
+			error = "Input i " + name + " skal være et tal separeret med punktum.;";
+			return error;
+		}
+		return error;
+	}
+	
 	String validateWord(String input, int min, int max, String name) {
 		String error = "";
 		if (input.length() > max || input.length() < min)
@@ -21,22 +35,10 @@
 	%>
 <html>
 <head>
+<title>Indtastningsformular</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
-<title>Indtastningsformular</title>
 <body>
-	<%
-//		if (request.getMethod().equals("POST")) { // brugeren har tastet på submit
-//			String Recept_nr = request.getParameter("Recept_nr");
-//			String error = validate(Recept_nr);
-//			if (error.equals("")) {
-//				System.out.print(alder);
-//				response.sendRedirect("VisOKData.jsp?alder_resultat="+ alder);
-//			} else
-//				response.sendRedirect("VisError.jsp?error_resultat="+ error);
-//		}
-	%>
-=======
 	<%
 		if (request.getMethod().equals("POST")) { // brugeren har tastet på submit
 			String Recept_nr = request.getParameter("Recept_nr"), Vare_nr = request.getParameter("Vare_nr"), Varenavn = request.getParameter("Varenavn"), Nomiel_nettovægt = request.getParameter("Nomiel_nettovægt"), Tolerance = request.getParameter("Tolerance");
@@ -44,7 +46,8 @@
 			String error = "" + validateNumber(Recept_nr, 1, 99999999, "Recept nr") + 
 					validateNumber(Vare_nr, 1, 99999999, "Vare_nr") + 
 					validateWord(Varenavn, 2, 20, "Varenavn") + 
-					validateNumber(Nomiel_nettovægt, 50, 6000, "Nomiel_nettovægt");
+					validateNumber(Nomiel_nettovægt, 50, 6000, "Nomiel_nettovægt") + 
+					validateNumber2(Tolerance, 0, 10, "Tolerance");
 				//mangler validate for tolerence.
 			
 			if (error.equals(""))
@@ -60,7 +63,7 @@
 						"&Oprettelses_dato_resultat=" + Oprettelses_dato);
 			}
 			else
-				response.sendRedirect("VisError.jsp?error_resultat="+"hej");
+				response.sendRedirect("VisError.jsp?error_resultat=" + error);
 		}
 	%>
 	<form method="POST" action="InputForm.jsp">
