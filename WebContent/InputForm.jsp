@@ -13,7 +13,8 @@
 		return error;
 	}
 	String validateWord(String input, int max, int min, String name) {
-		if (inut.length() > max || input.length() < min)
+		String error = "";
+		if (input.length() > max || input.length() < min)
 			error = "Input i " + name + " skal have en længe på " + min + "-" + max + " tegn.;";
 		return error;
 	}
@@ -42,7 +43,7 @@
 			
 			String error = validateNumber(Recept_nr, 1, 99999999, "Recept nr") + 
 					validateNumber(Vare_nr, 1, 99999999, "Vare_nr") + 
-					validateWord(String Varenavn, 20, 2, "Varenavn") + 
+					validateWord(Varenavn, 20, 2, "Varenavn") + 
 					validateNumber(Nomiel_nettovægt, 50, 6000, "Nomiel_nettovægt");
 				//mangler validate for tolerence.
 			
