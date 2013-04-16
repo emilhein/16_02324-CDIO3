@@ -1,5 +1,5 @@
 <%!
-	String validateNumber(String input, int max, int min, String name) {
+	String validateNumber(String input, int min, int max, String name) {
 		String error = "";
 		int number = 0;
 		try {
@@ -12,7 +12,7 @@
 			error = "Input i " + name + " skal mindst være " + min + " og højest være " + max + ".;";
 		return error;
 	}
-	String validateWord(String input, int max, int min, String name) {
+	String validateWord(String input, int min, int max, String name) {
 		String error = "";
 		if (input.length() > max || input.length() < min)
 			error = "Input i " + name + " skal have en længe på " + min + "-" + max + " tegn.;";
@@ -41,9 +41,9 @@
 		if (request.getMethod().equals("POST")) { // brugeren har tastet på submit
 			String Recept_nr = request.getParameter("Recept_nr"), Vare_nr = request.getParameter("Vare_nr"), Varenavn = request.getParameter("Varenavn"), Nomiel_nettovægt = request.getParameter("Nomiel_nettovægt"), Tolerance = request.getParameter("Tolerance");
 			
-			String error = validateNumber(Recept_nr, 1, 99999999, "Recept nr") + 
+			String error = "" + validateNumber(Recept_nr, 1, 99999999, "Recept nr") + 
 					validateNumber(Vare_nr, 1, 99999999, "Vare_nr") + 
-					validateWord(Varenavn, 20, 2, "Varenavn") + 
+					validateWord(Varenavn, 2, 20, "Varenavn") + 
 					validateNumber(Nomiel_nettovægt, 50, 6000, "Nomiel_nettovægt");
 				//mangler validate for tolerence.
 			
