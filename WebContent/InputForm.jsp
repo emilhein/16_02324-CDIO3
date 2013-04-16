@@ -59,7 +59,7 @@
 						"&Oprettelses_dato_resultat=" + Oprettelses_dato);
 			}
 			else
-				response.sendRedirect("VisError.jsp?error_resultat="+error);
+				response.sendRedirect("VisError.jsp?error_resultat="+"hej");
 		}
 	%>
 	<form method="POST" action="InputForm.jsp">
