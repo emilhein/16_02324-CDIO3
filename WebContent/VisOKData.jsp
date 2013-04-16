@@ -10,12 +10,12 @@
 		}
 	%>
 	De indtastede værdi er godkendt: Du indtastede: <br>
-	<head>Recept nr: </head><%=request.getParameter("recept_nr_resultat")%> </br><br>
-	<head>Vare nr: </head><%=request.getParameter("vare_nr_resultat")%> </br><br>
-	<head>Varenavn: </head><%=request.getParameter("varenavn_resultat")%>	 </br><br>
-	<head>Nomiel nettovægt: </head><%=request.getParameter("nomiel_nettovægt_resultat")%> </br><br>
-	<head>Tolerance (netto i %): </head><%=request.getParameter("tolerence_resultat")%>	 </br><br>
-	<head>Oprettelses dato: </head><%=request.getParameter("oprettelses_dato_resultat")%> </br>
+	Recept nr: <%=request.getParameter("recept_nr_resultat")%> </br><br>
+	Vare nr: <%=request.getParameter("vare_nr_resultat")%> </br><br>
+	Varenavn: <%=request.getParameter("varenavn_resultat")%>	 </br><br>
+	Nomiel nettovægt: <%=request.getParameter("nomiel_nettovægt_resultat")%> </br><br>
+	Tolerance (netto i %): <%=request.getParameter("tolerence_resultat")%>	 </br><br>
+	Oprettelses dato: <%=request.getParameter("oprettelses_dato_resultat")%> </br>
 	<form method="GET" action="InputForm.jsp">
 		<input type="submit" value="OK">
 	</form>
