@@ -49,7 +49,8 @@
 			
 			if (error.equals(""))
 			{
-				String Oprettelses_dato = "12:00 10-04-2013";
+				java.util.Date dims = new java.util.Date();
+				String Oprettelses_dato = dims.getHours() + ":" + dims.getMinutes() + " " + dims.getDate() + "/" + dims.getMonth() + "-" + (dims.getYear() + 1900);
 				System.out.print(Recept_nr + "\n" );
 				response.sendRedirect("VisOkData.jsp?Recept_nr_resultat=" + Recept_nr +
 						"&Vare_nr_resultat=" + Vare_nr +
