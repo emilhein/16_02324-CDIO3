@@ -5,7 +5,7 @@
 		try {
 			number = Integer.parseInt(input);
 		} catch (Exception e) {
-			error = "Input i " + name + " skal være et tal.;";
+			error = "Input i " + name + " skal være et heltal.;";
 			return error;
 		}
 		if (number > max || number < min)
@@ -13,12 +13,12 @@
 		return error;
 	}
 	
-	String validateNumber2(String input, long min, long max, String name)
+	String validateNumber2(String input, double min, double max, String name)
 	{
 		String error = "";
-		long number = 0;
+		double number = 0;
 		try {
-			number = Long.parseLong(input);
+			number = Double.parseDouble(input);
 		} catch (Exception e) {
 			error = "Input i " + name + " skal være et tal separeret med punktum.;";
 			return error;
@@ -41,14 +41,13 @@
 <body>
 	<%
 		if (request.getMethod().equals("POST")) { // brugeren har tastet på submit
-			String Recept_nr = request.getParameter("Recept_nr"), Vare_nr = request.getParameter("Vare_nr"), Varenavn = request.getParameter("Varenavn"), Nomiel_nettovægt = request.getParameter("Nomiel_nettovægt"), Tolerance = request.getParameter("Tolerance");
+			String Recept_nr = request.getParameter("Recept_nr"), Vare_nr = request.getParameter("Vare_nr"), Varenavn = request.getParameter("Varenavn"), Nomiel_nettovaegt = request.getParameter("Nomiel_nettovaegt"), Tolerance = request.getParameter("Tolerance");
 			
 			String error = "" + validateNumber(Recept_nr, 1, 99999999, "Recept nr") + 
 					validateNumber(Vare_nr, 1, 99999999, "Vare_nr") + 
 					validateWord(Varenavn, 2, 20, "Varenavn") + 
-					validateNumber(Nomiel_nettovægt, 50, 6000, "Nomiel_nettovægt") + 
+					validateNumber(Nomiel_nettovaegt, 50, 6000, "Nomiel_nettovægt") + 
 					validateNumber2(Tolerance, 0, 10, "Tolerance");
-				//mangler validate for tolerence.
 			
 			if (error.equals(""))
 			{
@@ -58,7 +57,7 @@
 				response.sendRedirect("VisOkData.jsp?Recept_nr_resultat=" + Recept_nr +
 						"&Vare_nr_resultat=" + Vare_nr +
 						"&Varenavn_resultat=" + Varenavn + 
-						"&Nomiel_nettovægt_resultat=" + Nomiel_nettovægt + 
+						"&Nomiel_nettovaegt_resultat=" + Nomiel_nettovaegt + 
 						"&Tolerance_resultat=" + Tolerance +
 						"&Oprettelses_dato_resultat=" + Oprettelses_dato);
 			}
@@ -70,7 +69,7 @@
 		Recept_nr: <input type="text" name="Recept_nr" value=""><br>
 		Vare_nr: <input type="text" name="Vare_nr" value=""><br>
 		Varenavn: <input type="text" name="Varenavn" value=""><br>
-		Nomiel_nettovægt: <input type="text" name="Nomiel_nettovægt" value=""><br>
+		Nomiel_nettovægt: <input type="text" name="Nomiel_nettovaegt" value=""><br>
 		Tolerance i procent: <input type="text" name="Tolerance" value=""><br>
 		<input type="submit" value="OK">
 	</form>

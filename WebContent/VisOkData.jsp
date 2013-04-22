@@ -10,18 +10,19 @@
 	String recept_nr = request.getParameter("Recept_nr_resultat");
 	String vare_nr = request.getParameter("Vare_nr_resultat");
 	String varenavn = request.getParameter("Varenavn_resultat");
-	String nomiel_nettoveagt = request.getParameter("Nomiel_nettovÃ¦gt_resultat");
-	String tolerance = request.getParameter("Tolerence_resultat");
+	String nomiel_nettovaegt = request.getParameter("Nomiel_nettovaegt_resultat");
+	String tolerance = request.getParameter("Tolerance_resultat");
 	String oprettelsesdato = request.getParameter("Oprettelses_dato_resultat");
 	%>
-		
-	De indtastede vÃ¦rdi er godkendt: Du indtastede: <br>
-	Recept nr: <%= recept_nr %> <br>
-	Vare nr: <%= vare_nr %> <br>
-	Varenavn: <%= varenavn %>	<br>
-	Nomiel nettovÃ¦gt: <%= nomiel_nettoveagt %> <br>
-	Tolerance (netto i %): <%= tolerance %>	 <br>
-	Tidspunkt for oprettelses: <%= oprettelsesdato %> <br>
-	<a href="InputForm.jsp">Link eller knap</a>
+	<p>	
+		De indtastede værdi er godkendt: Du indtastede: <br>
+		Recept nr: <%= recept_nr %> <br>
+		Vare nr: <%= vare_nr %> <br>
+		Varenavn: <%= varenavn %>	<br>
+		Nomiel nettovægt: <%= nomiel_nettovaegt %> <br>
+		Tolerance (netto i %): <%= tolerance %>	 <br>
+		Tidspunkt for oprettelses: <%= oprettelsesdato %> <br>
+		<a href="InputForm.jsp">Link eller knap</a>
+	</p>
 </body>
 </html>
