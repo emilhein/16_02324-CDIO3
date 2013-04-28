@@ -23,6 +23,8 @@
 			error = "Input i " + name + " skal være et tal separeret med punktum.;";
 			return error;
 		}
+		if (number > max || number < min)
+			error = "Input i " + name + " skal mindst være " + min + " og højest være " + max + ".";
 		return error;
 	}
 	
@@ -47,7 +49,7 @@
 					validateNumber(Vare_nr, 1, 99999999, "Vare_nr") + 
 					validateWord(Varenavn, 2, 20, "Varenavn") + 
 					validateNumber(Nomiel_nettovaegt, 50, 6000, "Nomiel_nettovægt") + 
-					validateNumber2(Tolerance, 0, 10, "Tolerance");
+					validateNumber2(Tolerance, 0.1, 10, "Tolerance");
 			
 			if (error.equals(""))
 			{

@@ -22,7 +22,7 @@
 		Nomiel nettovægt: <%= nomiel_nettovaegt %> <br>
 		Tolerance (netto i %): <%= tolerance %>	 <br>
 		Tidspunkt for oprettelses: <%= oprettelsesdato %> <br>
-		<a href="InputForm.jsp">Link eller knap</a>
+		<a href="InputForm.jsp">Tilbage til hovedmenu</a>
 	</p>
 </body>
 </html>
